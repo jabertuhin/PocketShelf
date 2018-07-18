@@ -15,6 +15,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/my_book_shelf"
         android:textAppearance="@android:style/TextAppearance"
+        android:onClick="toMyShelf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
