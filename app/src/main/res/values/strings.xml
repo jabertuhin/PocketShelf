@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pocket Shelf</string>
+    <string name="my_book_shelf">My Book Shelf</string>
+    <string name="borrowed_books">Borrowed Books</string>
+    <string name="bought_books">Bought Books</string>
+    <string name="want_to_buy">Want to Buy</string>
+    <string name="reading">Reading</string>
+    <string name="read">Read</string>
+</resources>

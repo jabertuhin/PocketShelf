@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/my_book_shelf"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="119dp"
+        android:layout_marginRight="119dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/my_book_shelf"
+        android:textAppearance="@android:style/TextAppearance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/borrowed_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="@string/borrowed_books"
+        android:textAppearance="@android:style/TextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/my_book_shelf"
+        app:layout_constraintTop_toBottomOf="@+id/my_book_shelf" />
+
+    <Button
+        android:id="@+id/bought_books"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/bought_books"
+        android:textAppearance="@android:style/TextAppearance"
+        app:layout_constraintStart_toStartOf="@+id/borrowed_book"
+        app:layout_constraintTop_toBottomOf="@+id/borrowed_book" />
+
+    <Button
+        android:id="@+id/want_to_buy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/want_to_buy"
+        android:textAppearance="@android:style/TextAppearance"
+        app:layout_constraintEnd_toEndOf="@+id/reading"
+        app:layout_constraintStart_toStartOf="@+id/reading"
+        app:layout_constraintTop_toBottomOf="@+id/bought_books" />
+
+    <Button
+        android:id="@+id/reading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/reading"
+        android:textAppearance="@android:style/TextAppearance"
+        app:layout_constraintEnd_toEndOf="@+id/read"
+        app:layout_constraintStart_toStartOf="@+id/read"
+        app:layout_constraintTop_toBottomOf="@+id/want_to_buy" />
+
+    <Button
+        android:id="@+id/read"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="124dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/read"
+        android:textAppearance="@android:style/TextAppearance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reading" />
+</android.support.constraint.ConstraintLayout>
