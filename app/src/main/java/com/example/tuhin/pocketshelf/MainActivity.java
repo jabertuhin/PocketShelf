@@ -17,4 +17,9 @@ public class MainActivity extends Activity {
         Intent goThere = new Intent(this,my_book_shelf.class);
         startActivity(goThere);
     }
+
+    public void toBorrowed(View view) {
+        Intent goThere = new Intent(this,borrowed_books.class);
+        startActivity(goThere);
+    }
 }
