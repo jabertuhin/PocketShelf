@@ -27,4 +27,9 @@ public class MainActivity extends Activity {
         Intent goThere = new Intent(this,bought_books.class);
         startActivity(goThere);
     }
+
+    public void toReading(View view) {
+        Intent goThere = new Intent(this,bought_books.class);
+        startActivity(goThere);
+    }
 }

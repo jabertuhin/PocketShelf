@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".want_to_buy">
         </activity>
+        <activity android:name=".reading">
+        </activity>
     </application>
 
 </manifest>
