@@ -28,8 +28,19 @@ public class MainActivity extends Activity {
         startActivity(goThere);
     }
 
-    public void toReading(View view) {
-        Intent goThere = new Intent(this,bought_books.class);
+    public void toWantToBuy(View view) {
+        Intent goThere = new Intent(this,want_to_buy.class);
         startActivity(goThere);
     }
+
+    public void toReading(View view) {
+        Intent goThere = new Intent(this,reading.class);
+        startActivity(goThere);
+    }
+
+    public void toRead(View view) {
+        Intent goThere = new Intent(this,read.class);
+        startActivity(goThere);
+    }
+
 }

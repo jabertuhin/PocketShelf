@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".reading">
         </activity>
+        <activity android:name=".read">
+        </activity>
     </application>
 
 </manifest>

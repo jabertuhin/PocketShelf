@@ -57,6 +57,7 @@
         android:textAppearance="@android:style/TextAppearance"
         app:layout_constraintBottom_toTopOf="@+id/reading"
         app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="toWantToBuy"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -80,6 +81,7 @@
         android:text="@string/read"
         android:textAppearance="@android:style/TextAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="toRead"
         app:layout_constraintEnd_toEndOf="@+id/reading"
         app:layout_constraintStart_toStartOf="@+id/reading" />
 </android.support.constraint.ConstraintLayout>
