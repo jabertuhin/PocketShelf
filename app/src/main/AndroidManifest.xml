@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".my_book_shelf">
         </activity>
+        <activity android:name=".borrowed_books">
+        </activity>
     </application>
 
 </manifest>

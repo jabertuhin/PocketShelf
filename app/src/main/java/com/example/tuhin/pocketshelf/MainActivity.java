@@ -22,4 +22,9 @@ public class MainActivity extends Activity {
         Intent goThere = new Intent(this,borrowed_books.class);
         startActivity(goThere);
     }
+
+    public void toBoughtBook(View view) {
+        Intent goThere = new Intent(this,bought_books.class);
+        startActivity(goThere);
+    }
 }
