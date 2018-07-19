@@ -1,87 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="73dp">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/my_book_shelf"
-        android:layout_width="0dp"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="43dp"
         android:onClick="toMyShelf"
         android:text="@string/my_book_shelf"
-        android:textAppearance="@android:style/TextAppearance"
-        app:layout_constraintEnd_toEndOf="@+id/bought_books"
-        app:layout_constraintStart_toStartOf="@+id/borrowed_book"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
-        android:id="@+id/borrowed_book"
-        android:layout_width="139dp"
+        android:id="@+id/borrowed_books"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:text="@string/borrowed_books"
-        android:textAppearance="@android:style/TextAppearance"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/my_book_shelf"
+        android:layout_marginTop="108dp"
         android:onClick="toBorrowed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_book_shelf" />
+        android:text="@string/borrowed_books"
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/bought_books"
-        android:layout_width="0dp"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/bought_books"
-        android:textAppearance="@android:style/TextAppearance"
-        app:layout_constraintEnd_toEndOf="@+id/borrowed_book"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/my_book_shelf"
+        android:layout_marginTop="175dp"
         android:onClick="toBoughtBook"
-        app:layout_constraintStart_toStartOf="@+id/want_to_buy"
-        app:layout_constraintTop_toBottomOf="@+id/borrowed_book" />
+        android:text="@string/bought_books"
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/want_to_buy"
-        android:layout_width="135dp"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/want_to_buy"
-        android:textAppearance="@android:style/TextAppearance"
-        app:layout_constraintBottom_toTopOf="@+id/reading"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_alignStart="@+id/my_book_shelf"
+        android:layout_centerVertical="true"
         android:onClick="toWantToBuy"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/want_to_buy"
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/reading"
-        android:layout_width="141dp"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/reading"
-        android:textAppearance="@android:style/TextAppearance"
-        app:layout_constraintBottom_toTopOf="@+id/read"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/my_book_shelf"
+        android:layout_marginBottom="164dp"
         android:onClick="toReading"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/reading"
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/read"
-        android:layout_width="0dp"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
-        android:text="@string/read"
-        android:textAppearance="@android:style/TextAppearance"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/my_book_shelf"
+        android:layout_marginBottom="97dp"
         android:onClick="toRead"
-        app:layout_constraintEnd_toEndOf="@+id/reading"
-        app:layout_constraintStart_toStartOf="@+id/reading" />
-</android.support.constraint.ConstraintLayout>
+        android:text="@string/read" />
+</RelativeLayout>
