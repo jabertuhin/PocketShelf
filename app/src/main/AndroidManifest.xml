@@ -16,18 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".my_book_shelf">
-        </activity>
-        <activity android:name=".borrowed_books">
-        </activity>
-        <activity android:name=".bought_books">
-        </activity>
-        <activity android:name=".want_to_buy">
-        </activity>
-        <activity android:name=".reading">
-        </activity>
-        <activity android:name=".read">
-        </activity>
+        <activity android:name=".my_book_shelf"></activity>
+        <activity android:name=".borrowed_books"></activity>
+        <activity android:name=".bought_books"></activity>
+        <activity android:name=".want_to_buy"></activity>
+        <activity android:name=".reading"></activity>
+        <activity android:name=".read"></activity>
     </application>
 
 </manifest>

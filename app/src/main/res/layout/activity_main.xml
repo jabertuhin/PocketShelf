@@ -15,7 +15,9 @@
         android:layout_marginTop="43dp"
         android:onClick="toMyShelf"
         android:text="@string/my_book_shelf"
-        android:textAppearance="@android:style/TextAppearance" />
+        android:textAppearance="@android:style/TextAppearance"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="104dp" />
 
     <Button
         android:id="@+id/borrowed_books"
@@ -26,7 +28,8 @@
         android:layout_marginTop="108dp"
         android:onClick="toBorrowed"
         android:text="@string/borrowed_books"
-        android:textAppearance="@android:style/TextAppearance" />
+        android:textAppearance="@android:style/TextAppearance"
+        android:layout_alignLeft="@+id/my_book_shelf" />
 
     <Button
         android:id="@+id/bought_books"
@@ -37,7 +40,8 @@
         android:layout_marginTop="175dp"
         android:onClick="toBoughtBook"
         android:text="@string/bought_books"
-        android:textAppearance="@android:style/TextAppearance" />
+        android:textAppearance="@android:style/TextAppearance"
+        android:layout_alignLeft="@+id/my_book_shelf" />
 
     <Button
         android:id="@+id/want_to_buy"
@@ -47,7 +51,8 @@
         android:layout_centerVertical="true"
         android:onClick="toWantToBuy"
         android:text="@string/want_to_buy"
-        android:textAppearance="@android:style/TextAppearance" />
+        android:textAppearance="@android:style/TextAppearance"
+        android:layout_alignLeft="@+id/my_book_shelf" />
 
     <Button
         android:id="@+id/reading"
@@ -58,7 +63,8 @@
         android:layout_marginBottom="164dp"
         android:onClick="toReading"
         android:text="@string/reading"
-        android:textAppearance="@android:style/TextAppearance" />
+        android:textAppearance="@android:style/TextAppearance"
+        android:layout_alignLeft="@+id/my_book_shelf" />
 
     <Button
         android:id="@+id/read"
@@ -68,5 +74,6 @@
         android:layout_alignStart="@+id/my_book_shelf"
         android:layout_marginBottom="97dp"
         android:onClick="toRead"
-        android:text="@string/read" />
+        android:text="@string/read"
+        android:layout_alignLeft="@+id/my_book_shelf" />
 </RelativeLayout>
