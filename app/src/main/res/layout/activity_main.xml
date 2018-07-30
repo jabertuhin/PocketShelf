@@ -7,73 +7,71 @@
 
     <Button
         android:id="@+id/my_book_shelf"
-        android:layout_width="137dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="43dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
         android:onClick="toMyShelf"
         android:text="@string/my_book_shelf"
-        android:textAppearance="@android:style/TextAppearance"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="104dp" />
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/borrowed_books"
-        android:layout_width="137dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/my_book_shelf"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/my_book_shelf"
         android:layout_marginTop="108dp"
         android:onClick="toBorrowed"
         android:text="@string/borrowed_books"
-        android:textAppearance="@android:style/TextAppearance"
-        android:layout_alignLeft="@+id/my_book_shelf" />
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/bought_books"
-        android:layout_width="137dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/my_book_shelf"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/my_book_shelf"
         android:layout_marginTop="175dp"
         android:onClick="toBoughtBook"
         android:text="@string/bought_books"
-        android:textAppearance="@android:style/TextAppearance"
-        android:layout_alignLeft="@+id/my_book_shelf" />
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/want_to_buy"
-        android:layout_width="137dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/my_book_shelf"
         android:layout_alignStart="@+id/my_book_shelf"
         android:layout_centerVertical="true"
         android:onClick="toWantToBuy"
         android:text="@string/want_to_buy"
-        android:textAppearance="@android:style/TextAppearance"
-        android:layout_alignLeft="@+id/my_book_shelf" />
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/reading"
-        android:layout_width="137dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/my_book_shelf"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/my_book_shelf"
         android:layout_marginBottom="164dp"
         android:onClick="toReading"
         android:text="@string/reading"
-        android:textAppearance="@android:style/TextAppearance"
-        android:layout_alignLeft="@+id/my_book_shelf" />
+        android:textAppearance="@android:style/TextAppearance" />
 
     <Button
         android:id="@+id/read"
-        android:layout_width="137dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/my_book_shelf"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/my_book_shelf"
         android:layout_marginBottom="97dp"
         android:onClick="toRead"
-        android:text="@string/read"
-        android:layout_alignLeft="@+id/my_book_shelf" />
+        android:text="@string/read" />
+
 </RelativeLayout>
