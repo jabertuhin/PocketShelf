@@ -12,22 +12,30 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
 public class my_book_shelf extends Activity{
+
+    DataBase dataBase;
+
+    int a;
 
     ListView list;
     ArrayAdapter<String> itemsAdapter;
     ArrayList<String> items;
-    DataBase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_book_shelf);
 
+        dataBase = new DataBase(this);
+
         list = (ListView) findViewById(R.id.list_item);
-        items = new ArrayList<String>();
+
+        items = dataBase.getMyBookList();
+
         itemsAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1,items);
         list.setAdapter(itemsAdapter);
-
+        //Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
     }
 }

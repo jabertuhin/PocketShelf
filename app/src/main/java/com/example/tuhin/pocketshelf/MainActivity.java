@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import java.sql.Array;
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
-    public static DataBase dataBase;
+    public DataBase dataBase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,7 @@ public class MainActivity extends Activity {
         Intent goThere = new Intent(this,my_book_shelf.class);
         startActivity(goThere);
     }
+
 
     public void toBorrowed(View view) {
         Intent goThere = new Intent(this,borrowed_books.class);
