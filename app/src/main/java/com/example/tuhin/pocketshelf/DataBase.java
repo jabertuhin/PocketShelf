@@ -133,5 +133,22 @@ public class DataBase extends SQLiteOpenHelper {
         return (chk<0)? false:true;
     }
 
+    public ArrayList<String> getBorrow(){
+        ArrayList<String> array_list = new ArrayList<String>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT *FROM "+TABLE_NAME_3, null );
+        res.moveToFirst();
+        while(res.isAfterLast() == false){
+            String oneRow = res.getString(res.getColumnIndex(Column[0]));
+            oneRow += "\n borrowed from ";
+            oneRow += (res.getString(res.getColumnIndex(Column[1])));
+            oneRow += "\n borrowed date ";
+            oneRow += (res.getString(res.getColumnIndex(Column[2])));
+            array_list.add(oneRow);
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
 
 }
