@@ -36,6 +36,5 @@ public class my_book_shelf extends Activity{
 
         itemsAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1,items);
         list.setAdapter(itemsAdapter);
-        //Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
     }
 }

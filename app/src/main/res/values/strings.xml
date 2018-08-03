@@ -7,4 +7,12 @@
     <string name="reading">Reading</string>
     <string name="read">Read</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="add_book">Add Book</string>
+    <string name="book_name">Book Name :</string>
+    <string name="borrowed_from">Borrowed From :</string>
+    <string name="borrowed_date">Borrowed Date :</string>
+    <string name="type_here">Type here....</string>
+    <string name="type_here">Type here....</string>
+    <string name="type_here">Type here....</string>
+    <string name="add">Add</string>
 </resources>
