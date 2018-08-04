@@ -8,7 +8,7 @@
         android:id="@+id/borrow_list"
         android:layout_width="match_parent"
         android:layout_height="444dp"
-        android:scrollbars="horizontal" />
+        android:scrollbars="vertical" />
 
     <Button
         android:id="@+id/button2"

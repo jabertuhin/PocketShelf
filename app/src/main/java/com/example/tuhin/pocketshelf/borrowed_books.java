@@ -13,6 +13,9 @@ import java.util.ArrayList;
 public class borrowed_books extends Activity {
 
     DataBase dataBase;
+    ListView list;
+    ArrayList<String> items;
+    ArrayAdapter<String> itemsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +24,11 @@ public class borrowed_books extends Activity {
 
         dataBase = new DataBase(this);
 
+        list = (ListView) findViewById(R.id.borrow_list);
 
-        ListView list = (ListView) findViewById(R.id.borrow_list);
+        items = dataBase.getBorrow();
 
-        ArrayList<String> items = dataBase.getBorrow();
-
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1,items);
+        itemsAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1,items);
         list.setAdapter(itemsAdapter);
     }
 

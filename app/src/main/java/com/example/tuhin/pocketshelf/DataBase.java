@@ -14,6 +14,7 @@ public class DataBase extends SQLiteOpenHelper {
     //Variables for database
 
     public static final String DATABASE_NAME = "pocketShelf";
+    public static final int database_version = 3;
     //(_id integer primary key AUTOINCREMENT, book_name text,author text,publisher text)
     //Table 1
     public static final String TABLE_NAME = "MyBook";
@@ -24,23 +25,23 @@ public class DataBase extends SQLiteOpenHelper {
     public static final String[] Column2 = {"book_name","author","publisher","price"};
 
     //Table 3
-    public static final String TABLE_NAME_3 = "borrowed_book";
+    public static final String TABLE_NAME_3 = "borrowedBook";
     public static final String[] Column3 = {"book_name","borrowed_from","borrowed_date"};
 
 
 
 
     public DataBase(Context context) {
-        super(context, DATABASE_NAME , null, 1);
+        super(context, DATABASE_NAME , null, database_version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
-        db.execSQL("CREATE TABLE MyBook (_id INTEGER primary key AUTOINCREMENT,book_name TEXT,author TEXT, publisher TEXT,buying_date TEXT,shop_name TEXT,price int,reading_status int)");
-        addToMyShelf();
-        db.execSQL("CREATE TABLE want_to_buy (book_name TEXT,author TEXT, publisher TEXT,price int)");
-        db.execSQL("CREATE TABLE borrowed_book (book_name TEXT,borrowed_from TEXT,borrowed_date TEXT)");
+        db.execSQL("CREATE TABLE MyBook (_id INTEGER primary key AUTOINCREMENT,book_name TEXT,author TEXT,publisher TEXT,buying_date TEXT,shop_name TEXT,price int,reading_status int)");
+        db.execSQL("CREATE TABLE want_to_buy (book_name TEXT,author TEXT,publisher TEXT,price int)");
+        db.execSQL("CREATE TABLE borrowedBook (book_name TEXT,borrowed_from TEXT,borrowed_date TEXT)");
+        addToMyShelf(db);
     }
 
     @Override
@@ -52,8 +53,8 @@ public class DataBase extends SQLiteOpenHelper {
         onCreate(db);
     }
     //public static final String[] Column = {"_id","book_name","author","publisher","buying_date","shop_name","price","reading_status"};
-    public void addToMyShelf(){
-        SQLiteDatabase db = this.getWritableDatabase();
+    public void addToMyShelf(SQLiteDatabase db){
+        db = this.getWritableDatabase();
         ContentValues res = new ContentValues();
         res.put(Column[1],"1984");
         res.put(Column[2],"Orwell");
@@ -113,9 +114,9 @@ public class DataBase extends SQLiteOpenHelper {
         Cursor res =  db.rawQuery( "SELECT book_name,author FROM "+TABLE_NAME+" where reading_status = 1", null );
         res.moveToFirst();
         while(res.isAfterLast() == false){
-            String oneRow = res.getString(res.getColumnIndex(Column[1]));
+            String oneRow = res.getString(0);
             oneRow += " by ";
-            oneRow += (res.getString(res.getColumnIndex(Column[2])));
+            oneRow += res.getString(1);
             array_list.add(oneRow);
             res.moveToNext();
         }
@@ -139,11 +140,11 @@ public class DataBase extends SQLiteOpenHelper {
         Cursor res =  db.rawQuery( "SELECT *FROM "+TABLE_NAME_3, null );
         res.moveToFirst();
         while(res.isAfterLast() == false){
-            String oneRow = res.getString(res.getColumnIndex(Column[0]));
+            String oneRow = res.getString(res.getColumnIndex(Column3[0]));
             oneRow += "\n borrowed from ";
-            oneRow += (res.getString(res.getColumnIndex(Column[1])));
+            oneRow += (res.getString(res.getColumnIndex(Column3[1])));
             oneRow += "\n borrowed date ";
-            oneRow += (res.getString(res.getColumnIndex(Column[2])));
+            oneRow += (res.getString(res.getColumnIndex(Column3[2])));
             array_list.add(oneRow);
             res.moveToNext();
         }

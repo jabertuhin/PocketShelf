@@ -22,7 +22,7 @@ public class read extends Activity{
 
         dataBase = new DataBase(this);
 
-        list = (ListView) findViewById(R.id.list_item);
+        list = (ListView) findViewById(R.id.read_list);
 
         items = dataBase.getMyBookList();
 
