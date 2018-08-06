@@ -14,7 +14,7 @@ public class DataBase extends SQLiteOpenHelper {
     //Variables for database
 
     public static final String DATABASE_NAME = "pocketShelf";
-    public static final int database_version = 3;
+    public static final int database_version = 4;
     //(_id integer primary key AUTOINCREMENT, book_name text,author text,publisher text)
     //Table 1
     public static final String TABLE_NAME = "MyBook";
@@ -27,6 +27,8 @@ public class DataBase extends SQLiteOpenHelper {
     //Table 3
     public static final String TABLE_NAME_3 = "borrowedBook";
     public static final String[] Column3 = {"book_name","borrowed_from","borrowed_date"};
+
+    public static SQLiteDatabase db;
 
 
 
@@ -41,7 +43,7 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE MyBook (_id INTEGER primary key AUTOINCREMENT,book_name TEXT,author TEXT,publisher TEXT,buying_date TEXT,shop_name TEXT,price int,reading_status int)");
         db.execSQL("CREATE TABLE want_to_buy (book_name TEXT,author TEXT,publisher TEXT,price int)");
         db.execSQL("CREATE TABLE borrowedBook (book_name TEXT,borrowed_from TEXT,borrowed_date TEXT)");
-        addToMyShelf(db);
+        //addToMyShelf(db);
     }
 
     @Override
@@ -53,7 +55,7 @@ public class DataBase extends SQLiteOpenHelper {
         onCreate(db);
     }
     //public static final String[] Column = {"_id","book_name","author","publisher","buying_date","shop_name","price","reading_status"};
-    public void addToMyShelf(SQLiteDatabase db){
+    public void addToMyShelf(){
         db = this.getWritableDatabase();
         ContentValues res = new ContentValues();
         res.put(Column[1],"1984");
@@ -88,7 +90,7 @@ public class DataBase extends SQLiteOpenHelper {
     public ArrayList<String> getMyBookList(){
         ArrayList<String> array_list = new ArrayList<String>();
 
-        SQLiteDatabase db = this.getReadableDatabase();
+        db = this.getReadableDatabase();
         int numRows = (int) DatabaseUtils.queryNumEntries(db, TABLE_NAME);
 
         array_list.add("Number Of Books - "+numRows);
@@ -110,7 +112,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     public ArrayList<String> getReadBook(){
         ArrayList<String> array_list = new ArrayList<String>();
-        SQLiteDatabase db = this.getReadableDatabase();
+        db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "SELECT book_name,author FROM "+TABLE_NAME+" where reading_status = 1", null );
         res.moveToFirst();
         while(res.isAfterLast() == false){
@@ -125,7 +127,7 @@ public class DataBase extends SQLiteOpenHelper {
 
 
     public boolean addBorrow(String book,String author,String date){
-        SQLiteDatabase db = this.getWritableDatabase();
+        db = this.getWritableDatabase();
         ContentValues res = new ContentValues();
         res.put(Column3[0],book);
         res.put(Column3[1],author);
@@ -136,7 +138,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     public ArrayList<String> getBorrow(){
         ArrayList<String> array_list = new ArrayList<String>();
-        SQLiteDatabase db = this.getReadableDatabase();
+        db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "SELECT *FROM "+TABLE_NAME_3, null );
         res.moveToFirst();
         while(res.isAfterLast() == false){

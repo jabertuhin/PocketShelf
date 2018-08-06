@@ -17,4 +17,7 @@
     <string name="type_here02">Type here...</string>
     <string name="type_here03">Type_here</string>
     <string name="add_new_book">Add New Book</string>
+    <string name="buy_book_name">Name :</string>
+    <string name="want_buy_author">Author :</string>
+    <string name="wnat_buy_add">Add</string>
 </resources>
