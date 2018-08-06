@@ -22,7 +22,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     //Table 2
     public static final String TABLE_NAME_2 = "want_to_buy";
-    public static final String[] Column2 = {"book_name","author","publisher","price"};
+    public static final String[] Column2 = {"book_name","author"};
 
     //Table 3
     public static final String TABLE_NAME_3 = "borrowedBook";
@@ -153,5 +153,30 @@ public class DataBase extends SQLiteOpenHelper {
         return array_list;
     }
 
+    /*
+    *Buy Book
+    */
+    public boolean addBuyBook(String book,String author){
+        db = this.getWritableDatabase();
+        ContentValues res = new ContentValues();
+        res.put(Column2[0],book);
+        res.put(Column2[1],author);
+        long chk = db.insert(TABLE_NAME_2,null,res);
+        return (chk<0)? false:true;
+    }
+
+    public ArrayList<String> getBuyBook(){
+        ArrayList<String> array_list = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT *FROM "+TABLE_NAME_2, null );
+        res.moveToFirst();
+        while(res.isAfterLast() == false){
+            String oneRow = res.getString(res.getColumnIndex(Column2[0]));
+            oneRow += "\n by ";
+            oneRow += (res.getString(res.getColumnIndex(Column2[1])));
+            res.moveToNext();
+        }
+        return array_list;
+    }
 
 }
