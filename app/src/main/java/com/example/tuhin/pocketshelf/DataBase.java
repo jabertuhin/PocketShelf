@@ -54,36 +54,23 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME_3);
         onCreate(db);
     }
-    //public static final String[] Column = {"_id","book_name","author","publisher","buying_date","shop_name","price","reading_status"};
-    public void addToMyShelf(){
+
+    /*
+     My Book List
+     */
+
+    public boolean addToMyShelf(String book_name,String author_name,String publisher,String date,String shop_name,int price,int status){
         db = this.getWritableDatabase();
         ContentValues res = new ContentValues();
-        res.put(Column[1],"1984");
-        res.put(Column[2],"Orwell");
-        res.put(Column[3],"Rupa");
-        res.put(Column[4],"21st Feb");
-        res.put(Column[5],"Pathok Somabesh");
-        res.put(Column[6],"150");
-        res.put(Column[7],"0");
-        db.insert(TABLE_NAME,null,res);
-        res = new ContentValues();
-        res.put(Column[1],"Shobnom");
-        res.put(Column[2],"Mujtoba ali");
-        res.put(Column[3],"jani na");
-        res.put(Column[4],"21st Feb");
-        res.put(Column[5],"Rokomari");
-        res.put(Column[6],"250");
-        res.put(Column[7],"1");
-        db.insert(TABLE_NAME,null,res);
-        res = new ContentValues();
-        res.put(Column[1],"Oporajito");
-        res.put(Column[2],"Bivutivushon");
-        res.put(Column[3],"Desh");
-        res.put(Column[4],"mone nai");
-        res.put(Column[5],"Islamia Library");
-        res.put(Column[6],"120");
-        res.put(Column[7],"2");
-        db.insert(TABLE_NAME,null,res);
+        res.put(Column[1],book_name);
+        res.put(Column[2],author_name);
+        res.put(Column[3],publisher);
+        res.put(Column[4],date);
+        res.put(Column[5],shop_name);
+        res.put(Column[6],price);
+        res.put(Column[7],status);
+        long ret = db.insert(TABLE_NAME,null,res);
+        return (ret<0)? false:true;
     }
 
 
@@ -124,7 +111,9 @@ public class DataBase extends SQLiteOpenHelper {
         }
         return array_list;
     }
-
+    /*
+    *BOrrow Book POrtion
+     */
 
     public boolean addBorrow(String book,String author,String date){
         db = this.getWritableDatabase();
