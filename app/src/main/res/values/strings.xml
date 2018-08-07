@@ -20,4 +20,12 @@
     <string name="buy_book_name">Name :</string>
     <string name="want_buy_author">Author :</string>
     <string name="wnat_buy_add">Add</string>
+    <string name="book_name_my">Book Name :</string>
+    <string name="author_name_my">Author Name :</string>
+    <string name="publisher_my">Publisher :</string>
+    <string name="buying_date_my">Buying Date :</string>
+    <string name="shop_name_my">Shop Name :</string>
+    <string name="price_my">Price :</string>
+    <string name="reading_status_my">Reading Status :</string>
+    <string name="new_read_reading_my">new,read,reading</string>
 </resources>

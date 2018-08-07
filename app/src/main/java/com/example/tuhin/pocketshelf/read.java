@@ -24,7 +24,7 @@ public class read extends Activity{
 
         list = (ListView) findViewById(R.id.read_list);
 
-        items = dataBase.getMyBookList();
+        items = dataBase.getReadBook();
 
         itemsAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1,items);
         list.setAdapter(itemsAdapter);

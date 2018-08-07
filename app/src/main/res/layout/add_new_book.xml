@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Book Name :"
+            android:text="@string/book_name_my"
             android:textAppearance="@android:style/TextAppearance"
             android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Author Name :"
+            android:text="@string/author_name_my"
             android:textAppearance="@android:style/TextAppearance"
             android:textStyle="bold" />
 
@@ -65,7 +65,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Publisher :"
+            android:text="@string/publisher_my"
             android:textAppearance="@android:style/TextAppearance"
             android:textStyle="bold" />
 
@@ -90,7 +90,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Buying Date :"
+            android:text="@string/buying_date_my"
             android:textAppearance="@android:style/TextAppearance"
             android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/type_here01"
-            android:inputType="textPersonName" />
+            android:inputType="date" />
     </LinearLayout>
 
     <LinearLayout
@@ -115,7 +115,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Shop Name :"
+            android:text="@string/shop_name_my"
             android:textAppearance="@android:style/TextAppearance"
             android:textStyle="bold" />
 
@@ -140,7 +140,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Price :"
+            android:text="@string/price_my"
             android:textAppearance="@android:style/TextAppearance"
             android:textStyle="bold" />
 
@@ -165,7 +165,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="Reading Status :"
+            android:text="@string/reading_status_my"
             android:textAppearance="@android:style/TextAppearance"
             android:textStyle="bold" />
 
@@ -175,7 +175,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="new,read,reading"
+            android:hint="@string/new_read_reading_my"
             android:inputType="textPersonName" />
 
 
@@ -185,6 +185,7 @@
         android:id="@+id/add_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="0"
-        android:text="@string/add_book" />
+        android:text="@string/add_book"
+        android:onClick="addAndGoBack"
+        />
 </LinearLayout>

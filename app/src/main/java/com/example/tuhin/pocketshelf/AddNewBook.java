@@ -17,7 +17,7 @@ public class AddNewBook extends Activity {
         database = new DataBase(this);
     }
 
-    public void addAndGo(View view){
+    public void addAndGoBack(View view){
         EditText etBookName = (EditText) findViewById(R.id.editText_book);
         EditText etAuthor = (EditText) findViewById(R.id.editText_author);
         EditText etPublisher = (EditText) findViewById(R.id.editText_publisher);

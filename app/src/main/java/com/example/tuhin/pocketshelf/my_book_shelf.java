@@ -39,7 +39,7 @@ public class my_book_shelf extends Activity{
     }
 
     public void goToAddBook(View view){
-        Intent goThere = new Intent(this,addBorrowedBook.class);
+        Intent goThere = new Intent(this,AddNewBook.class);
         startActivity(goThere);
     }
 }
