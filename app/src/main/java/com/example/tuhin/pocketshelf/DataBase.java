@@ -57,6 +57,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     /*
      My Book List
+     0 means not read, 1 means read, 2 means reading
      */
 
     public boolean addToMyShelf(String book_name,String author_name,String publisher,String date,String shop_name,int price,int status){
@@ -97,6 +98,8 @@ public class DataBase extends SQLiteOpenHelper {
         return array_list;
     }
 
+    //Read Book List
+
     public ArrayList<String> getReadBook(){
         ArrayList<String> array_list = new ArrayList<String>();
         db = this.getReadableDatabase();
@@ -111,6 +114,48 @@ public class DataBase extends SQLiteOpenHelper {
         }
         return array_list;
     }
+
+    //Reading Book List
+
+    public ArrayList<String> getReadingBook(){
+        ArrayList<String> array_list = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT book_name,author FROM "+TABLE_NAME+" where reading_status = 2", null );
+        res.moveToFirst();
+        while(res.isAfterLast() == false){
+            String oneRow = res.getString(0);
+            oneRow += " by ";
+            oneRow += res.getString(1);
+            array_list.add(oneRow);
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    //Bought Book List
+
+    //{"_id","book_name","author","publisher","buying_date","shop_name","price","reading_status"};
+
+    public ArrayList<String> getBoughtBook(){
+        ArrayList<String> array_list = new ArrayList<String>();
+        db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT *FROM "+TABLE_NAME+" where reading_status = 0", null );
+        res.moveToFirst();
+        while(res.isAfterLast() == false){
+            String oneRow = res.getString(res.getColumnIndex(Column[1]));
+            oneRow += " by ";
+            oneRow += res.getString(res.getColumnIndex(Column[2]));
+            oneRow += "\n bought from ";
+            oneRow += res.getString(res.getColumnIndex(Column[5]));
+            oneRow += "\n price ";
+            oneRow += res.getString(res.getColumnIndex(Column[6]));
+            array_list.add(oneRow);
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+
     /*
     *BOrrow Book POrtion
      */
