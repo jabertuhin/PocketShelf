@@ -37,4 +37,9 @@ public class my_book_shelf extends Activity{
         itemsAdapter = new ArrayAdapter<String>(getBaseContext(),android.R.layout.simple_list_item_1,items);
         list.setAdapter(itemsAdapter);
     }
+
+    public void goToAddBook(View view){
+        Intent goThere = new Intent(this,addBorrowedBook.class);
+        startActivity(goThere);
+    }
 }

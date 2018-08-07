@@ -23,9 +23,8 @@
         <activity android:name=".reading" />
         <activity android:name=".read" />
         <activity android:name=".addBorrowedBook"/>
-        <activity android:name=".add_buy_book">
-
-        </activity>
+        <activity android:name=".add_buy_book"/>
+        <activity android:name=".AddNewBook"/>
     </application>
 
 </manifest>

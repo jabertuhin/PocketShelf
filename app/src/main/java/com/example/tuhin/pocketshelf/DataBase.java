@@ -14,7 +14,7 @@ public class DataBase extends SQLiteOpenHelper {
     //Variables for database
 
     public static final String DATABASE_NAME = "pocketShelf";
-    public static final int database_version = 4;
+    public static final int database_version = 5;
     //(_id integer primary key AUTOINCREMENT, book_name text,author text,publisher text)
     //Table 1
     public static final String TABLE_NAME = "MyBook";
